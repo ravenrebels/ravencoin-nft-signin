@@ -22,8 +22,8 @@ var ref = db.ref("users");
 const listener = async function (snapshot) {
   const data = snapshot.val();
 
-  if(!data){
-      return null;
+  if (!data) {
+    return null;
   }
   const userKeys = Object.keys(data);
 
@@ -31,6 +31,7 @@ const listener = async function (snapshot) {
     const userData = data[userKey];
 
     const response = await rpc(config, "listaddressesbyasset", [userData.name]);
+
     const rvnData = response.data.result;
 
     if (userData.address && userData.signature && userData.message) {
@@ -48,13 +49,15 @@ const listener = async function (snapshot) {
         userData.message,
       ]);
       console.log("VERIFY MESSAGE", obj.data.result);
+      const metadata = await rpc(config, "getassetdata", [userData.name]);
 
       const toSave = {
         address: userData.address,
         signature: userData.signature,
-        message: userData.message, 
+        message: userData.message,
         isVerified: obj.data.result,
-        name: userData.name
+        name: userData.name,
+        assetdata: metadata.data.result,
       };
       db.ref("verificationsbyuserid/" + userKey).update(toSave);
     }
