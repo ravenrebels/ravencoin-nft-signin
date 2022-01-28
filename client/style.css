@@ -1,0 +1,26 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+body {
+  box-sizing: border-box;
+
+  background: linear-gradient(110deg, #fdcd3b 50%, #ffed4b 50%);
+}
+
+
+#app{
+
+    min-height: 300px;
+    background :white;
+
+    max-width: 400px;
+
+    margin: auto;
+
+    margin-top: 40px;
+
+    padding: 40px;
+    border-radius: 20px;
+}
