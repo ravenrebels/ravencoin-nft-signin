@@ -6,6 +6,8 @@
 Choose "Realtime database"
 
 Set the rules for Realtime database
+![image](https://user-images.githubusercontent.com/9694984/151613825-1033b54d-5e81-471c-9176-8de7ac68fa89.png)
+
 ```
 {
   "rules": {
