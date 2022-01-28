@@ -27,6 +27,7 @@ Set the rules for Realtime database
 ```
 Export service account file (JSON) and save it as 
 ``` ./backend/firebaseServiceAccount.json ``` 
+![Inkedconsole firebase google com_u_0_project_signin-80421_settings_general_web_MzEwNWM4YmItNTE4Yy00ODY5LTk0ZWItMjQ0MTg3YzQyMDVk_LI](https://user-images.githubusercontent.com/9694984/151614593-8c98b85e-1ad5-4f68-afe7-a552db3349e0.jpg)
 
 #### ./backend/ravenConfig.json
 Update the content.
