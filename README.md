@@ -31,6 +31,7 @@ Export service account file (JSON) and save it as
 
 #### ./backend/ravenConfig.json
 Update the content.
+That is enter your username/password and url/port for your Ravencoin core QT
 Syntax
 ```
 {
