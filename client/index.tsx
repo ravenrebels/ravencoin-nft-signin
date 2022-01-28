@@ -8,16 +8,7 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBr4_Uqy9Znuy1pF9-11ps9c2GgeTswbn4",
-  authDomain: "signin-80421.firebaseapp.com",
-  databaseURL:
-    "https://signin-80421-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "signin-80421",
-  storageBucket: "signin-80421.appspot.com",
-  messagingSenderId: "330665323225",
-  appId: "1:330665323225:web:0da276ecf7425ab56e2cc8",
-};
+import firebaseConfig from "./firebaseConfig.json";
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -206,7 +197,7 @@ function Hello({ verificationObject, signOut }) {
     return null;
   }
   const isVerified = verificationObject.isVerified;
-  if(!isVerified){
+  if (!isVerified) {
     return null;
   }
 
