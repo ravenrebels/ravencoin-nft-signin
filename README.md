@@ -57,5 +57,8 @@ To start local dev server run
 
 
 ### build server
-run
+install dependencies by running
 ```npm install```
+
+To start the backend/server part run
+```node index```
