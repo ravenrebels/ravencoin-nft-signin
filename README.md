@@ -1,6 +1,10 @@
 ## Educational project, showing how you can sign in to a web site with Ravencoin NFT
 ![image](https://user-images.githubusercontent.com/9694984/151614866-7bc0546c-a551-42ba-a95e-4fb6e19be08a.png)
 
+We have a 1 hour 45 minutes youtube video showing how we created this project.
+https://youtu.be/VXEjw518oWg
+
+The code is sloppy, that's for sure but our intention is to point out, signal the opportunities we have.
 
 ### Setup a firebase project
 

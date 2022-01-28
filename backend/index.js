@@ -10,10 +10,6 @@ admin.initializeApp({
   databaseURL: firebaseConfig.databaseURL,
 });
 
-function getAddressByNFT(name) {
-  //Talk to Ravencoin
-}
-
 // As an admin, the app has access to read and write all data, regardless of Security Rules
 var db = admin.database();
 var ref = db.ref("users");

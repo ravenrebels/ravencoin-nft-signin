@@ -28,10 +28,15 @@ function App() {
 
   const [verificationObject, setVerificationObject] = React.useState(null);
 
+  /* Register event listener at start */
   React.useEffect(() => {
+
+    //Start listening to auth changes that is if we have a firebase session.
     auth.onAuthStateChanged(function (user) {
+      
       if (user) {
         setUser(user);
+
         //Start listening to changes in firebase
         const db = getDatabase();
         const userRef = ref(db, "users/" + user.uid);
