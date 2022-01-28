@@ -3,12 +3,11 @@ const config = require("./ravenConfig.json");
 const axios = require("axios");
 // Fetch the service account key JSON file contents
 var serviceAccount = require("./firebaseServiceAccount.json");
-
+var firebaseConfig = require("../client/firebaseConfig.json");
 // Initialize the app with a service account, granting admin privileges
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL:
-    "https://signin-80421-default-rtdb.europe-west1.firebasedatabase.app",
+  databaseURL: firebaseConfig.databaseURL,
 });
 
 function getAddressByNFT(name) {
