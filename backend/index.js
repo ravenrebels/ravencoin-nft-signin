@@ -29,6 +29,7 @@ const listener = async function (snapshot) {
 
     const rvnData = response.data.result;
 
+    //Has the user provided all informationen needed to verify identity?
     if (userData.address && userData.signature && userData.message) {
       //Check with Ravencoin if signature is correct
       /*
@@ -43,31 +44,42 @@ const listener = async function (snapshot) {
         userData.signature,
         userData.message,
       ]);
-      console.log("VERIFY MESSAGE", obj.data.result);
+
+      //Fetch metadata about the asset, so we can get a nice IPFS image
       const metadata = await rpc(config, "getassetdata", [userData.name]);
 
+
+      //Now create a "verification by user id" object with all necesarry info
       const toSave = {
         address: userData.address,
-        signature: userData.signature,
-        message: userData.message,
-        isVerified: obj.data.result,
-        name: userData.name,
         assetdata: metadata.data.result,
+        isVerified: obj.data.result,
+        message: userData.message,
+        name: userData.name,
+        signature: userData.signature,
       };
       db.ref("verificationsbyuserid/" + userKey).update(toSave);
-    }
-    if (Object.keys(rvnData).length === 1) {
+    } 
+    //OK we do NOT have all info needed to verify identity
+    else if (Object.keys(rvnData).length === 1) {
+      //Reset verification by user id
+      db.ref("verificationsbyuserid/" + userKey).update({});
       const address = Object.keys(rvnData)[0];
 
       if (address !== userData.address) {
         const obj = {
           address: address,
           message: Math.random() + "",
+          error: "",
         };
         db.ref("users/" + userKey).update(obj);
       }
     } else {
-      console.log("Did not get one for", userData.name);
+      //By calling "set" we delete all other attributes for this user
+      db.ref("users/" + userKey).set({
+        name: userData.name,
+        error: userData.name + " is not a unique asset / NFT",
+      });
     }
   }
   /*
