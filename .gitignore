@@ -1,4 +1,5 @@
 firebaseServiceAccount.json
 node_modules
+build
 firebaseConfig.json
 ravenConfig.json

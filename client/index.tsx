@@ -20,8 +20,23 @@ const auth = getAuth();
 
 signInAnonymously(auth);
 
+const PREFIX = "HALEYNJOHNSON#";
 function App() {
-  const [name, setName] = React.useState("");
+  const [name, _setName] = React.useState(PREFIX);
+
+  const setName = (name) => {
+    //Make sure that the name always starts with PREFIX
+    if (!name) {
+      name = PREFIX;
+    }
+
+    if(name.startsWith(PREFIX) === false){
+      name = PREFIX;
+    }
+
+
+    _setName(name);
+  };
   const [user, setUser] = React.useState(null);
   const [address, setAddress] = React.useState("");
   const [message, setMessage] = React.useState("");

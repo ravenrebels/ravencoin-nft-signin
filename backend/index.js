@@ -1,6 +1,5 @@
 const fs = require("fs");
 const admin = require("firebase-admin");
-const config = require("./ravenConfig.json");
 const axios = require("axios");
 
 console.info("Welcome Ravencoin lover!");
@@ -8,6 +7,8 @@ healthcheck();
 // Fetch the service account key JSON file contents
 var serviceAccount = require("./firebaseServiceAccount.json");
 var firebaseConfig = require("../client/firebaseConfig.json");
+
+const config = require("./ravenConfig.json");
 // Initialize the app with a service account, granting admin privileges
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),

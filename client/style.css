@@ -6,21 +6,20 @@ body {
 body {
   box-sizing: border-box;
 
-  background: linear-gradient(110deg, #fdcd3b 50%, #ffed4b 50%);
+  /* background: linear-gradient(110deg, #fdcd3b 50%, #ffed4b 50%); */
+  background: linear-gradient(110deg, #ef5339 50%, black 50%);
 }
 
+#app {
+  min-height: 300px;
+  background: white;
 
-#app{
+  max-width: 550px;
 
-    min-height: 300px;
-    background :white;
+  margin: auto;
 
-    max-width: 400px;
+  margin-top: 40px;
 
-    margin: auto;
-
-    margin-top: 40px;
-
-    padding: 40px;
-    border-radius: 20px;
+  padding: 40px;
+  border-radius: 20px;
 }

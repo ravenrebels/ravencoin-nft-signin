@@ -19,14 +19,30 @@ export function Hello({ verificationObject, signOut }) {
           <Avatar verificationObject={verificationObject} />
         </div>
       </div>
-
-      <button
-        onClick={signOut}
-        style={{ float: "right" }}
-        className="mt-5 btn btn-primary"
+      <iframe
+        width="100%"
+        height="315"
+        src="https://www.youtube.com/embed/9yqZAccfhBM"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <div
+        style={{
+          display: "flex",
+          flex: "1",
+          justifyContent: "flex-end",
+        }}
       >
-        Sign out
-      </button>
+        <button
+          onClick={signOut}
+          style={{ float: "right" }}
+          className="mt-5 btn btn-primary"
+        >
+          Sign out
+        </button>
+      </div>
     </div>
   );
 }
